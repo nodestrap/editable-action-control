@@ -1,0 +1,37 @@
+# &lt;EditableActionControl /&gt;
+A generic element with `valid`/`invalid` and `press`/`release` state.
+
+## Preview
+
+```jsx
+<EditableActionControl tag='span' theme='primary' size='lg' gradient={true} outlined={true} enableValidation={true} isValid={true} press={true} >
+    hello world
+</EditableActionControl>
+```
+Rendered to:
+```html
+<span class="c1 thPrimary szLg gradient outlined vald pressed">
+    hello world
+</span>
+```
+
+## Features
+* Includes all features in [`<EditableControl />`](https://www.npmjs.com/package/@nodestrap/editable-control).
+* Includes all features in [`<ActionControl />`](https://www.npmjs.com/package/@nodestrap/action-control).
+* Customizable via [`@cssfn/css-config`](https://www.npmjs.com/package/@cssfn/css-config).
+
+## Installation
+
+Using npm:
+```
+npm i @nodestrap/editable-action-control
+```
+
+## Support Us
+
+If you feel our lib is useful for your projects,  
+please make a donation to avoid our project from extinction.
+
+We always maintain our projects as long as we're still alive.
+
+[[Make a donation](https://ko-fi.com/heymarco)]
