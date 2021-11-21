@@ -48,8 +48,8 @@ export const usesEditableActionControlStates = () => {
         ]),
     ]);
 };
-export const usesEditableActionControl = () => {
-    return composition([
+export const useEditableActionControlSheet = createUseSheet(() => [
+    mainComposition([
         imports([
             // layouts:
             usesEditableActionControlLayout(),
@@ -57,13 +57,6 @@ export const usesEditableActionControl = () => {
             usesEditableActionControlVariants(),
             // states:
             usesEditableActionControlStates(),
-        ]),
-    ]);
-};
-export const useEditableActionControlSheet = createUseSheet(() => [
-    mainComposition([
-        imports([
-            usesEditableActionControl(),
         ]),
     ]),
 ]);

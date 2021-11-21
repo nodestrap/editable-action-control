@@ -4,7 +4,6 @@ import { EditableControlElement, EditableControlProps } from '@nodestrap/editabl
 export declare const usesEditableActionControlLayout: () => import("@cssfn/cssfn").StyleCollection;
 export declare const usesEditableActionControlVariants: () => import("@cssfn/cssfn").StyleCollection;
 export declare const usesEditableActionControlStates: () => import("@cssfn/cssfn").StyleCollection;
-export declare const usesEditableActionControl: () => import("@cssfn/cssfn").StyleCollection;
 export declare const useEditableActionControlSheet: import("@cssfn/types").Factory<import("jss").Classes<"main">>;
 export type { EditableControlElement };
 export interface EditableActionControlProps<TElement extends EditableControlElement = EditableControlElement> extends EditableControlProps<TElement>, ActionControlProps<TElement> {
