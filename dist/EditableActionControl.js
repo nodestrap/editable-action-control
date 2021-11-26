@@ -68,19 +68,16 @@ export function EditableActionControl(props) {
     // fn props:
     const propEnabled = usePropEnabled(props);
     // jsx:
-    return (<EditableControl 
-    // other props:
-    {...props} 
-    // classes:
-    mainClass={props.mainClass ?? sheet.main} stateClasses={[...(props.stateClasses ?? []),
+    return (React.createElement(EditableControl, { ...props, 
+        // classes:
+        mainClass: props.mainClass ?? sheet.main, stateClasses: [...(props.stateClasses ?? []),
             pressReleaseState.class,
-        ]} 
-    // events:
-    onClick={(propEnabled || undefined) && props.onClick} // ignores onClick if disabled
-     onMouseDown={(e) => { props.onMouseDown?.(e); pressReleaseState.handleMouseDown(e); }} onKeyDown={(e) => { props.onKeyDown?.(e); pressReleaseState.handleKeyDown(e); }} onAnimationEnd={(e) => {
+        ], 
+        // events:
+        onClick: (propEnabled || undefined) && props.onClick, onMouseDown: (e) => { props.onMouseDown?.(e); pressReleaseState.handleMouseDown(e); }, onKeyDown: (e) => { props.onKeyDown?.(e); pressReleaseState.handleKeyDown(e); }, onAnimationEnd: (e) => {
             props.onAnimationEnd?.(e);
             // states:
             pressReleaseState.handleAnimationEnd(e);
-        }}/>);
+        } }));
 }
 export { EditableActionControl as default };
