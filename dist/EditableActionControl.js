@@ -3,7 +3,9 @@ import { default as React, } from 'react'; // base technology of our nodestrap c
 // cssfn:
 import { 
 // compositions:
-composition, mainComposition, imports, } from '@cssfn/cssfn'; // cssfn core
+mainComposition, 
+// styles:
+style, imports, } from '@cssfn/cssfn'; // cssfn core
 import { 
 // hooks:
 createUseSheet, } from '@cssfn/react-cssfn'; // cssfn for react
@@ -22,43 +24,41 @@ import {
 usesEditableControlLayout, usesEditableControlVariants, usesEditableControlStates, EditableControl, } from '@nodestrap/editable-control';
 // styles:
 export const usesEditableActionControlLayout = () => {
-    return composition([
-        imports([
+    return style({
+        ...imports([
             // layouts:
             usesEditableControlLayout(),
             usesActionControlLayout(),
         ]),
-    ]);
+    });
 };
 export const usesEditableActionControlVariants = () => {
-    return composition([
-        imports([
+    return style({
+        ...imports([
             // variants:
             usesEditableControlVariants(),
             usesActionControlVariants(),
         ]),
-    ]);
+    });
 };
 export const usesEditableActionControlStates = () => {
-    return composition([
-        imports([
+    return style({
+        ...imports([
             // states:
             usesEditableControlStates(),
             usesActionControlStates(),
         ]),
-    ]);
+    });
 };
 export const useEditableActionControlSheet = createUseSheet(() => [
-    mainComposition([
-        imports([
-            // layouts:
-            usesEditableActionControlLayout(),
-            // variants:
-            usesEditableActionControlVariants(),
-            // states:
-            usesEditableActionControlStates(),
-        ]),
-    ]),
+    mainComposition(imports([
+        // layouts:
+        usesEditableActionControlLayout(),
+        // variants:
+        usesEditableActionControlVariants(),
+        // states:
+        usesEditableActionControlStates(),
+    ])),
 ], /*sheetId :*/ 'viprxwh99g'); // an unique salt for SSR support, ensures the server-side & client-side have the same generated class names
 export function EditableActionControl(props) {
     // styles:
